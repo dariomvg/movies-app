@@ -1,0 +1,20 @@
+.section-upcoming {
+    width: 100%;
+    background-color: #161616;
+    color: #fff;
+}
+.title-page-upcoming {
+    font-size: 25px;
+    text-align: center;
+    padding: 100px 10px 30px 10px;
+}
+
+.sec-upcoming {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}

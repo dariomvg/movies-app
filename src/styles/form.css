@@ -1,0 +1,33 @@
+.sec-buscador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  .input-menu {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .input-menu::placeholder {
+    font-size: 16px;
+    color: #000;
+  }
+  
+  .btn-menu {
+    width: 80px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #17b7da;
+    font-size: 14px;
+    color: #fff;
+  }
