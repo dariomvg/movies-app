@@ -6,8 +6,11 @@ import MoviesProvider from "@/context/MoviesContext";
 const font = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "App Movies...",
-  description: "App from movies, series...",
+  title: "Application of movies, series y TV",
+  description: "Application where you can see information and trailers of the latest movies. Plus, series too.",
+  icons : {
+    icon: "/icon.png"
+  }
 };
 
 export default function RootLayout({ children }) {
@@ -17,7 +20,6 @@ export default function RootLayout({ children }) {
         <MoviesProvider>
           <Menu />
           {children}
-          
         </MoviesProvider>
       </body>
     </html>

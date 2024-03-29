@@ -9,6 +9,7 @@
     padding: 100px 20px 20px 20px;
     background-color: #161616;
     color: #fff;
+    overflow-y: auto;
 
 }
 

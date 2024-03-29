@@ -39,13 +39,14 @@
   font-weight: bold;
   text-decoration: none;
   border: none;
-  color: #fff;
+  color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 12px;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .sec-description {
@@ -61,18 +62,8 @@
 
 .card-movie-slider {
   display: none;
-  animation: slideIn 1s ease-in-out;
 }
 
 .card-movie-slider.active {
   display: block;
-}
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+} 

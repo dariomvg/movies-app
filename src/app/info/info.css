@@ -181,6 +181,12 @@
 @media (max-width: 768px)  {
   .info-details-movie {
     flex-direction: column;
+    width: 100%;
+  backdrop-filter: blur(5px);
+
+  }
+  .img-box-movie {
+    margin: auto;
   }
   .sec-video {
     width: 100%;
@@ -190,4 +196,13 @@
     width: 70%;
     top: 0;
   }
+  .sec-other-movies {
+    justify-content: center; 
+    width: 100%
+  }
+  .box-movie {
+    flex-direction: column; 
+    width: 100%;
+  }
+
 }

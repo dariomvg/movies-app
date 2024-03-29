@@ -5,7 +5,7 @@ import CardMovie from "@/components/CardMovie";
 
 const page = () => {
     const {series} = SeriesApi(); 
-
+    console.log(series)
   return (
     <section className="section-series">
         <h1 className="title-page-series">series</h1>

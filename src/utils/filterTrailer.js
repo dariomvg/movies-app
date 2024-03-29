@@ -5,6 +5,7 @@ export const filterTrailer = (data) => {
         ? video
         : video.name === "Teaser Trailer"
     );
+
     return trailer;
   }
 };
