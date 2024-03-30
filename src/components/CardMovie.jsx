@@ -25,7 +25,7 @@ const CardMovie = ({ item }) => {
     <article className="card-movie" onClick={() => handleInfoMovie(item)}>
       <img
         src={`${image_url_500}/${item.poster_path}`}
-        alt={item.original_title}
+        alt={`${item.original_title}`}
         width="100%"
         height="100%"
         className="img-card-movie"
