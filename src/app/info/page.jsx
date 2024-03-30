@@ -3,6 +3,7 @@ import { useMovies } from "@/context/MoviesContext";
 import { image_url, image_url_500, url_trailer } from "@/utils/options";
 import { MoviesApi } from "@/services/MoviesApi";
 import ReactPlayer from "react-player/youtube";
+import Image from "next/image";
 import "./info.css";
 
 const InfoTodo = () => {
@@ -13,17 +14,21 @@ const InfoTodo = () => {
     <section className="section-info-todo">
       <section className="sec-details-movie">
         <div className="fondo">
-          <img
+          <Image
           src={`${image_url}${infoMovie.backdrop_path}`}
-          alt={infoMovie.title}
+          alt={`${infoMovie.title}`}
           className="img-info-fondo"
+          sizes="100vw"
+          fill
         />
         </div>
         <div className="info-details-movie">
-          <img
+          <Image
             src={`${image_url_500}${infoMovie.poster_path}`}
-            alt={infoMovie.title}
+            alt={`${infoMovie.title}`}
             className="poster"
+            width={240}
+            height={300}
           />
           <div className="cont-details">
             <div className="sec-title">
@@ -62,11 +67,11 @@ const InfoTodo = () => {
           {movies &&
             movies.slice(0, 6).map((item) => (
               <article key={item.id} className="box-movie">
-                <img
+                <Image
                   src={`${image_url_500}/${item.poster_path}`}
                   alt={item.original_title}
-                  width="100%"
-                  height="100%"
+                  width={180}
+                  height={250}
                   className="img-box-movie"
                   loading="lazy"
                 />

@@ -21,15 +21,16 @@ const Menu = () => {
           alt="logo de TMDB"
           title="TMDB"
           className="logo"
-          width={100}
+          width={150}
           height={60}
+          priority
         />
 
         <Image
           className="icon-menu"
           src={imgMenu}
-          width={40}
-          height={40}
+          width={50}
+          height={50}
           onClick={handleMenu}
           alt="menu"
         />

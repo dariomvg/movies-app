@@ -4,9 +4,10 @@ import { image_url } from "@/utils/options";
 import { MoviesApi } from "@/services/MoviesApi";
 import { useMovies } from "@/context/MoviesContext";
 import { useRouter } from "next/navigation";
-import "../styles/slider.css";
 import { movieTrailer } from "@/services/MoviesTrailer";
 import { filterTrailer } from "@/utils/filterTrailer";
+import Image from "next/image";
+import "../styles/slider.css";
 
 export default function SliderMovies() {
   const [selected, setSelected] = useState(0);
@@ -42,17 +43,16 @@ export default function SliderMovies() {
             selected === index && (
               <article
                 key={item.id}
-                className={`card-movie-slider ${
-                  selected === index ? "active" : ""
-                }`}>
-                <img
-                  width={"100%"}
-                  height={"100%"}
-                  src={image_url + item.backdrop_path}
+                className="card-movie-slider" >
+                <Image
+                  src={`${image_url}${item.backdrop_path}`}
                   alt={item.original_title}
-                  loading="lazy"
                   className="img-fondo"
+                  sizes="100vw"
+                  fill
+                  priority
                 />
+                <img src="" alt="" />
                 <section className="sec-details">
                   <h1 className="title-slider">{item.original_title}</h1>
                   <p className="sec-description">{item.overview}</p>

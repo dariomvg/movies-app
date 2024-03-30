@@ -36,20 +36,26 @@
     margin: auto;
 }
 
-
 .card-movie {
     width: 180px;
     border-radius: 10px;
     cursor: pointer;
     transition: transform .5s;
+    position: relative;
+    overflow: hidden;
 }
-.card-movie:hover {
+
+.img-card-movie {
+    border-radius: 10px;
+    transition: transform .5s;
+
+}
+
+.card-movie:hover .img-card-movie  {
     transform: scale(1.1);
     transition: transform .5s;
 }
-.img-card-movie {
-    border-radius: 10px;
-}
+
 
 @media (max-width: 768px)  {
     .sec-all-movies {

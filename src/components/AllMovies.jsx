@@ -1,6 +1,5 @@
 "use client";
 import { MoviesApi } from "@/services/MoviesApi";
-import { MoviesPopularApi } from "@/services/MoviesPopularApi";
 import { SeriesApi } from "@/services/SeriesApi";
 import CardMovie from "./CardMovie";
 import "../styles/allMovies.css";

@@ -60,10 +60,5 @@
   overflow: hidden;
 }
 
-.card-movie-slider {
-  display: none;
-}
 
-.card-movie-slider.active {
-  display: block;
-} 
+
