@@ -15,34 +15,33 @@ const InfoTodo = () => {
       <section className="sec-details-movie">
         <div className="fondo">
           <Image
-          src={`${image_url}${infoMovie.backdrop_path}`}
-          alt={`${infoMovie.title}`}
-          className="img-info-fondo"
-          sizes="100vw"
-          fill
-        />
+            src={`${image_url}${infoMovie.backdrop_path}`}
+            alt={`${infoMovie.title}`}
+            className="img-info-fondo"
+            sizes="100vw"
+            fill
+          />
         </div>
         <div className="info-details-movie">
           <Image
             src={`${image_url_500}${infoMovie.poster_path}`}
             alt={`${infoMovie.title}`}
             className="poster"
-            width={240}
-            height={300}
+            width={180}
+            height={240}
           />
           <div className="cont-details">
             <div className="sec-title">
               <h2 className="title-info">
-                {infoMovie.original_title}
-                {infoMovie.original_name}
+                {infoMovie.original_title || infoMovie.original_name}
               </h2>
               <p className="vote-info">
                 {Math.round(infoMovie.vote_average)}/10
               </p>
             </div>
+
             <strong className="date-info">
-              {infoMovie.release_date}
-              {infoMovie.first_air_date}
+              {infoMovie.release_date || infoMovie.first_air_date}
             </strong>
             <p className="overview-info">{infoMovie.overview}</p>
           </div>
@@ -61,7 +60,7 @@ const InfoTodo = () => {
       </section>
       <section className="sec-recomendado">
         <h3 className="title-recomendado">
-        Other titles that may interest you
+          Other titles that may interest you
         </h3>
         <div className="sec-other-movies">
           {movies &&
@@ -71,7 +70,7 @@ const InfoTodo = () => {
                   src={`${image_url_500}/${item.poster_path}`}
                   alt={item.original_title}
                   width={180}
-                  height={250}
+                  height={240}
                   className="img-box-movie"
                   loading="lazy"
                 />

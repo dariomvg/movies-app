@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { api_url, options } from "@/utils/options";
 
-
-export function MoviesApi() {
+export function MoviesApi(page) {
   const [movies, setMovies] = useState([]);
   const [error, SetError] = useState(null);
 
@@ -21,7 +20,7 @@ export function MoviesApi() {
       }
     };
     moviesApi();
-  }, []);
+  }, [page]);
 
-  return { movies, error };
+  return { movies, error};
 }

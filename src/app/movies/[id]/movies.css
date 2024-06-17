@@ -1,0 +1,42 @@
+.section-movies {
+    width: 100%;
+    background-color: #161616;
+    color: #fff;
+    padding: 10px;
+}
+
+.title-page-movies {
+    text-align: center;
+    padding: 100px 10px 30px 10px;
+    font-size: 25px;
+}
+
+.sec-movies {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: auto;
+}
+
+.btn-more-movies {
+    width: 100%;
+    font-size: 18px;
+    color: #2c65ea;
+    text-decoration: none;
+    transition: .5s;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-more-movies:hover {
+    transition: .5s;
+    text-decoration: underline;
+    color: #5284f9;
+}
+
+

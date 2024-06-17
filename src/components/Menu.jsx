@@ -39,7 +39,7 @@ const Menu = () => {
           <Link href="/" className="link-menu">
             Home
           </Link>
-          <Link href="/movies" className="link-menu">
+          <Link href="/movies/1" className="link-menu">
             Movies
           </Link>
           <Link href="/upcoming" className="link-menu">
