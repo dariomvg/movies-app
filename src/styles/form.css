@@ -1,33 +1,42 @@
 .sec-buscador {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    width: 400px;
-    border-radius: 10px;
-    background-color: #fff;
-  }
-  
-  .input-menu {
-    background: transparent;
-    border: none;
-    outline: none;
-    padding: 8px;
-    font-size: 16px;
-  }
-  
-  .input-menu::placeholder {
-    font-size: 16px;
-    color: #000;
-  }
-  
-  .btn-menu {
-    width: 80px;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    background-color: #17b7da;
-    font-size: 14px;
-    color: #fff;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 400px;
+}
+
+.input-menu {
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.input-menu:focus {
+  border-color: #5284f9;
+}
+
+.input-menu::placeholder {
+  font-size: 16px;
+  color: #fff;
+}
+
+.btn-menu {
+  width: 50px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: .5s; 
+  border-radius: 5px;
+
+}
+
+.btn-menu:hover {
+  background-color: #5284f9;
+  transition: .5s; 
+}

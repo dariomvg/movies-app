@@ -1,9 +1,7 @@
-import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Menu from "@/components/Menu";
 import MoviesProvider from "@/context/MoviesContext";
-
-const font = Montserrat({ subsets: ["latin"] });
+import '@fontsource/roboto/500.css';
 
 export const metadata = {
   title: "Application of movies, series y TV",
@@ -16,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body>
         <MoviesProvider>
           <Menu />
           {children}

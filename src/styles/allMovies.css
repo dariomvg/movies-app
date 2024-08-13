@@ -9,18 +9,24 @@
     margin: auto;
 }
 
+.container-title-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 20px 10px;
+}
+
 .title-sec-movies {
     font-size: 25px;
-    padding: 20px;
     color: #fff;
-    text-align: center;
 }
 
 .title-sec-series {
     font-size: 25px;
-    padding: 20px;
+    padding: 10px 10px 20px 10px;
     color: #fff;
-    text-align: center;
+    text-align: start;
 }
 
 
@@ -32,7 +38,10 @@
     transition: .5s;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
+    padding: 10px;
 }
 
 .link-all-movies:hover {
@@ -54,8 +63,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 20px; 
+    justify-content: space-between;
+    gap: 10px; 
     padding: 10px;
 }
 

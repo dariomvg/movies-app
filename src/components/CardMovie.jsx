@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { useMovies } from "@/context/MoviesContext";
 import { filterTrailer } from "@/utils/filterTrailer";
 import { movieTrailer } from "@/services/MoviesTrailer";
-import Image from "next/image";
 
 const CardMovie = ({ item }) => {
   const { showInfoMovie } = useMovies();
@@ -24,8 +23,8 @@ const CardMovie = ({ item }) => {
 
   return (
     <article className="card-movie" onClick={() => handleInfoMovie(item)}>
-      <Image
-        src={`${image_url_500}/${item.poster_path}`}
+      <img
+        src={`${image_url_500}/${item.poster_path}.src`}
         alt={`${item.original_title}`}
         width={180}
         height={250}

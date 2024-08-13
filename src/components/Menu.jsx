@@ -1,37 +1,21 @@
 "use client";
 import Link from "next/link";
-import logo from "@/assets/image-db.svg";
-import Image from "next/image";
 import imgMenu from "../assets/iconMenu.svg";
 import "@/styles/menu.css";
 import { useState } from "react";
-import FormSearch from "./FormSearch";
 
 const Menu = () => {
   const [active, setActive] = useState(false);
 
-  const handleMenu = () => {
-    setActive(!active);
-  };
   return (
     <header className={`header ${active ? "active" : ""}`}>
       <nav className="nav">
-        <Image
-          src={logo}
-          alt="logo de TMDB"
-          title="TMDB"
-          className="logo"
-          width={150}
-          height={60}
-          priority
-        />
-
-        <Image
+        <img
           className="icon-menu"
-          src={imgMenu}
-          width={50}
-          height={50}
-          onClick={handleMenu}
+          src={imgMenu.src}
+          width={40}
+          height={40}
+          onClick={() => setActive(!active)}
           alt="menu"
         />
 
@@ -42,16 +26,16 @@ const Menu = () => {
           <Link href="/movies/1" className="link-menu">
             Movies
           </Link>
-          <Link href="/upcoming" className="link-menu">
-            Upcoming
-          </Link>
           <Link href="/series" className="link-menu">
             Series
           </Link>
+          <Link href="/upcoming" className="link-menu">
+            Upcoming
+          </Link>
         </div>
-        
-        <FormSearch />
+        <p className="title-footer">All rights reserved 2024</p>
       </nav>
+      
     </header>
   );
 };

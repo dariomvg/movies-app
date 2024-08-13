@@ -1,12 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import { image_url } from "@/utils/options";
+import { image_url, image_url_500 } from "@/utils/options";
 import { MoviesApi } from "@/services/MoviesApi";
 import { useMovies } from "@/context/MoviesContext";
 import { useRouter } from "next/navigation";
 import { movieTrailer } from "@/services/MoviesTrailer";
 import { filterTrailer } from "@/utils/filterTrailer";
-import Image from "next/image";
 import "../styles/slider.css";
 
 export default function SliderMovies() {
@@ -14,6 +13,7 @@ export default function SliderMovies() {
   const { movies } = MoviesApi();
   const { showInfoMovie } = useMovies();
   const slider = movies.slice(0, 5);
+  const topMovies = slider.slice(0, 2);
   const router = useRouter();
 
   const next = () => {
@@ -23,7 +23,7 @@ export default function SliderMovies() {
   useEffect(() => {
     const interval = setInterval(() => {
       next();
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [selected]);
@@ -36,35 +36,47 @@ export default function SliderMovies() {
   };
 
   return (
-    <section className="container-slider">
-      {slider &&
-        slider.map(
-          (item, index) =>
-            selected === index && (
-              <article
-                key={item.id}
-                className="card-movie-slider" >
-                <Image
-                  src={`${image_url}${item.backdrop_path}`}
-                  alt={item.original_title}
-                  className="img-fondo"
-                  sizes="100vw"
-                  fill
-                  priority
-                />
-                <img src="" alt="" />
-                <section className="sec-details">
-                  <h1 className="title-slider">{item.original_title}</h1>
-                  <p className="sec-description">{item.overview}</p>
-                  <button
-                    className="link-slider"
-                    onClick={() => handleInfoMovie(item)}>
-                    Info
-                  </button>
-                </section>
-              </article>
-            )
-        )}
+    <section className="section-slider">
+      <div className="container-cards">
+        {slider &&
+          slider.map(
+            (item, index) =>
+              selected === index && (
+                <article className="card-movie-slider" key={item.id}>
+                  <img
+                    className="img-fondo"
+                    src={`${image_url}${item.backdrop_path}.src`}
+                    alt={item.original_title}
+                    width="100%"
+                    height="100%"
+                  />
+                  <section className="sec-details">
+                    <h1
+                      className="title-slider"
+                      onClick={() => handleInfoMovie(item)}>
+                      {item.original_title}
+                    </h1>
+
+                    <p className="sec-description">{item.overview}</p>
+                  </section>
+                </article>
+              )
+          )}
+      </div>
+      <div className="images-posters">
+        {topMovies.length > 0 &&
+          topMovies.map((item) => (
+            <img
+              key={item.id}
+              src={`${image_url_500}${item.poster_path}.src`}
+              alt={item.original_title}
+              width={180}
+              height={250}
+              onClick={() => handleInfoMovie(item)}
+              className="img-poster"
+            />
+          ))}
+      </div>
     </section>
   );
 }

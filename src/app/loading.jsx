@@ -2,9 +2,13 @@ import "./loading.css";
 
 const loading = () => {
   return (
-    <section className="container-loading">
-      <div className="loading-bar">Loading</div>
-    </section>
+      <section className="dots-container">
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+      </section>
   );
 };
 

@@ -1,14 +1,12 @@
 import SliderMovies from "@/components/SliderMovies";
 import AllMovies from "@/components/AllMovies";
-import "../styles/main.css";
-import Footer from "@/components/Footer";
+import "./main.css";
 
 function Home() {
   return (
     <main className="section-main">
       <SliderMovies /> 
       <AllMovies />
-      <Footer />
     </main>
   );
 }

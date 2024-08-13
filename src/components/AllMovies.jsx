@@ -4,6 +4,7 @@ import { SeriesApi } from "@/services/SeriesApi";
 import CardMovie from "./CardMovie";
 import "../styles/allMovies.css";
 import Link from "next/link";
+import FormSearch from "./FormSearch";
 
 export default function AllMovies() {
   const { movies } = MoviesApi();
@@ -12,7 +13,11 @@ export default function AllMovies() {
     <section className="section-all-movies">
       <section className="section-container-movies">
         <div className="container">
-          <h2 className="title-sec-movies">Latest releases...</h2>
+          <div className="container-title-form">
+            <h2 className="title-sec-movies">Latest releases...</h2>
+            <FormSearch />
+          </div>
+
           <div className="sec-all-movies">
             {movies &&
               movies.map((item) => <CardMovie key={item.id} item={item} />)}
