@@ -13,5 +13,5 @@ export const image_url = process.env.NEXT_PUBLIC_IMAGE_URL;
 export const image_url_500 = process.env.NEXT_PUBLIC_IMAGE_URL_500;
 export const url_trailer = process.env.NEXT_PUBLIC_URL_TRAILER;
 export const url_series = process.env.NEXT_PUBLIC_URL_SERIES;
-export const url_popular = process.env.NEXT_PUBLIC_URL_POPULA;
+export const url_popular = process.env.NEXT_PUBLIC_URL_POPULAR;
 
