@@ -13,8 +13,9 @@
 
 }
 
-.title-search {
-    font-size: 30px;
-    text-align: center;
-    padding: 100px 20px 20px 20px;
+@media (max-width: 768px) {
+    .section-search-movies {
+        gap: 10px;
+        padding: 60px 10px 10px 10px;
+    }
 }

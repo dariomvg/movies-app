@@ -1,28 +1,11 @@
 "use client";
 import { image_url_500 } from "@/utils/options";
-import "../styles/allMovies.css";
-import { useRouter } from "next/navigation";
-import { useMovies } from "@/context/MoviesContext";
-import { filterTrailer } from "@/utils/filterTrailer";
-import { movieTrailer } from "@/services/MoviesTrailer";
+import Link from "next/link";
+import "../styles/card-movie.css";
 
 const CardMovie = ({ item }) => {
-  const { showInfoMovie } = useMovies();
-  const router = useRouter();
-
-  const handleInfoMovie = async (item) => {
-    const movieData = await movieTrailer(item.id);
-    if (movieData.success === false) {
-      return;
-    } else {
-      const trailer = filterTrailer(movieData);
-      showInfoMovie(item, trailer);
-      router.push("/info");
-    }
-  };
-
   return (
-    <article className="card-movie" onClick={() => handleInfoMovie(item)}>
+    <Link href={`/movie/${item.id}`} className="card-movie">
       <img
         src={`${image_url_500}/${item.poster_path}.src`}
         alt={`${item.original_title}`}
@@ -31,7 +14,7 @@ const CardMovie = ({ item }) => {
         className="img-card-movie"
         loading="lazy"
       />
-    </article>
+    </Link>
   );
 };
 

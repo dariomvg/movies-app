@@ -1,12 +1,12 @@
-import SliderMovies from "@/components/SliderMovies";
-import AllMovies from "@/components/AllMovies";
+import SectionLanding from "@/components/SectionLanding";
+import SectionMovies from "@/components/SectionMovies";
 import "./main.css";
 
 function Home() {
   return (
     <main className="section-main">
-      <SliderMovies /> 
-      <AllMovies />
+      <SectionLanding /> 
+      <SectionMovies />
     </main>
   );
 }

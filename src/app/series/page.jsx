@@ -1,10 +1,10 @@
 "use client"
-import { SeriesApi } from "@/services/SeriesApi";
 import "./series.css";
 import CardMovie from "@/components/CardMovie";
+import { useMovies } from "@/context/MoviesContext";
 
 const page = () => {
-    const {series} = SeriesApi(); 
+    const {series} = useMovies(); 
     
   return (
     <section className="section-series">

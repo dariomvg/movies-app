@@ -3,12 +3,11 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  width: 400px;
 }
 
 .input-menu {
   background: transparent;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   outline: none;
   font-size: 16px;
   color: #fff;
@@ -33,7 +32,6 @@
   background-color: transparent;
   transition: .5s; 
   border-radius: 5px;
-
 }
 
 .btn-menu:hover {

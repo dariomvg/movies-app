@@ -1,5 +1,8 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { getMovies } from "@/services/getMovies";
+import { getMoviesPopular } from "@/services/getMoviesPopular";
+import { getSeries } from "@/services/getSeries";
+import { createContext, useContext, useState, useEffect } from "react";
 
 export const MoviesContext = createContext();
 
@@ -10,21 +13,35 @@ export const useMovies = () => {
 };
 
 export default function MoviesProvider({ children }) {
-  const [infoMovie, setInfoMovie] = useState({});
-  const [searchMovie, setSearchMovie] = useState([]);
-  const [trailer, setTrailer] = useState([]);
 
-  const showInfoMovie = (info, trailerMovie) => {
-    setInfoMovie(info);
-    setTrailer(trailerMovie[0]);
-  };
+  const [movies, setMovies] = useState([]);
+  const [series, setSeries] = useState([]);
+  const [popularMovies, setPopularMovies] = useState([])
 
-  const handleSearchMovies = (movies) => {
-    setSearchMovie(movies); 
-  }
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const foundMovies = await getMovies();
+        const foundSeries = await getSeries();
+        const foundPopular = await getMoviesPopular(); 
+        setPopularMovies(foundPopular);
+        setMovies(foundMovies);
+        setSeries(foundSeries);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
+  }, []);
+
 
   return (
-    <MoviesContext.Provider value={{ showInfoMovie, infoMovie, trailer, handleSearchMovies, searchMovie }}>
+    <MoviesContext.Provider
+      value={{
+        movies,
+        series,
+        popularMovies
+      }}>
       {children}
     </MoviesContext.Provider>
   );

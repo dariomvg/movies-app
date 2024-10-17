@@ -1,14 +1,11 @@
 "use client";
 import { useState } from "react";
 import "../styles/form.css";
-import { useMovies } from "@/context/MoviesContext";
 import { useRouter } from "next/navigation";
-import { SearchMovies } from "@/services/MoviesSearch";
 import iconSearch from "../assets/icon-search.svg";
 
 const FormSearch = () => {
   const [query, setQuery] = useState("");
-  const { handleSearchMovies } = useMovies(); 
   const router = useRouter(); 
 
   const handleSearch = async (e) => {
@@ -16,10 +13,8 @@ const FormSearch = () => {
     if (query === "") {
       return;
     } else {
-      const newMovies = await SearchMovies(query);
-      handleSearchMovies(newMovies);
+      router.push(`/search?movies=${query}`);
       setQuery("");
-      router.push("/search");
     }
   };
   return (

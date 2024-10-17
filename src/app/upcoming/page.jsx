@@ -1,10 +1,10 @@
 "use client"
 import CardMovie from "@/components/CardMovie";
-import { MoviesPopularApi } from "@/services/MoviesPopularApi";
 import "./upcoming.css";
+import { useMovies } from "@/context/MoviesContext";
 
 const Upcoming = () => {
-  const { popularMovies } = MoviesPopularApi();
+  const { popularMovies } = useMovies(); 
   return (
     <section className="section-upcoming">
       <h1 className="title-page-upcoming">Upcoming and popular</h1>

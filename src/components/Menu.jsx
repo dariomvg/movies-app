@@ -1,8 +1,9 @@
 "use client";
-import Link from "next/link";
-import imgMenu from "../assets/iconMenu.svg";
-import "@/styles/menu.css";
 import { useState } from "react";
+import Link from "next/link";
+import FormSearch from "./FormSearch";
+import imgMenu from "../assets/iconMenu.svg";
+import "../styles/menu.css";
 
 const Menu = () => {
   const [active, setActive] = useState(false);
@@ -12,6 +13,7 @@ const Menu = () => {
       <nav className="nav">
         <img
           className="icon-menu"
+          loading="lazy"
           src={imgMenu.src}
           width={40}
           height={40}
@@ -32,10 +34,9 @@ const Menu = () => {
           <Link href="/upcoming" className="link-menu">
             Upcoming
           </Link>
+          <FormSearch />
         </div>
-        <p className="title-footer">All rights reserved 2024</p>
       </nav>
-      
     </header>
   );
 };

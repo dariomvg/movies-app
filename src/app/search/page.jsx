@@ -1,10 +1,13 @@
 "use client"
 import CardMovie from "@/components/CardMovie";
-import { useMovies } from "@/context/MoviesContext";
 import "./search.css";
+import { useSearchParams } from "next/navigation";
+import { useSearchMovie } from "@/hooks/useSearchMovie";
 
 const SearchPage = () => {
-  const { searchMovie } = useMovies();
+  const searchParams = useSearchParams(); 
+  const query = searchParams.get("movies")
+  const {searchMovie} = useSearchMovie(query);
 
   return (
     <section className="section-search-movies">

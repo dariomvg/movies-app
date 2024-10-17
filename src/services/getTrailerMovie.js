@@ -1,6 +1,6 @@
 import { api_key, api_url, options } from "@/utils/options";
 
-export const movieTrailer = async (id) => {
+export const getTrailerMovie = async (id) => {
   try {
     const response = await fetch(
       `${api_url}/movie/${id}?api_key=${api_key}&append_to_response=videos`,
