@@ -3,7 +3,7 @@ import "./series.css";
 import CardMovie from "@/components/CardMovie";
 import { useMovies } from "@/context/MoviesContext";
 
-const page = () => {
+const Series = () => {
     const {series} = useMovies(); 
     
   return (
@@ -16,4 +16,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Series

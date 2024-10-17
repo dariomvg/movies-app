@@ -5,7 +5,7 @@ import ReactPlayer from "react-player/youtube";
 import "./info.css";
 import { useFindMovie } from "@/hooks/useFindMovie";
 
-const pageInfoMovie = ({ params }) => {
+export default function PageInfoMovie ({ params }) {
   const { movies } = useMovies();
   const id = parseInt(params.id);
   const { trailer, infoMovie } = useFindMovie(id);
@@ -95,4 +95,4 @@ const pageInfoMovie = ({ params }) => {
   );
 };
 
-export default pageInfoMovie;
+
