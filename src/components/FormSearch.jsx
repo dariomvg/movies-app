@@ -25,10 +25,11 @@ const FormSearch = () => {
         className="input-menu"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        data-testid="input"
         required
       />
       <button type="submit" className="btn-menu">
-        <img src={iconSearch.src} alt="search" width={20} height={20} className="icon-search" />
+        <img src={iconSearch.src} alt="search" width={20} height={20} className="icon-search" data-testid="button" />
       </button>
     </form>
   );
